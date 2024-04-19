@@ -70,6 +70,7 @@ public class BTreeTest {
 
         //will have only 1 node, the root
         assertEquals(1, b.getNumberOfNodes());
+        b.close();
 
     }
 
@@ -84,6 +85,7 @@ public class BTreeTest {
         BTree b = new BTree(3, testFilename);
 
         assertEquals(3, b.getDegree());
+        b.close();
 
     }
 
@@ -107,6 +109,7 @@ public class BTreeTest {
         assertEquals(0, b.getHeight());
 
         assertTrue(validateBTreeInserts(b, new long[]{1}));
+        b.close();
     }
 
     /**
@@ -131,6 +134,7 @@ public class BTreeTest {
         assertEquals(2, b.getHeight());
 
         assertTrue(validateBTreeInserts(b, input));
+        b.close();
     }
 
 
@@ -156,6 +160,7 @@ public class BTreeTest {
         assertEquals(2, b.getHeight());
 
         assertTrue(validateBTreeInserts(b, input));
+        b.close();
     }
 
 
@@ -179,6 +184,7 @@ public class BTreeTest {
         assertEquals(0, b.getHeight());
 
         assertTrue(validateBTreeInserts(b, new long[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}));
+        b.close();
     }
 
 
@@ -204,6 +210,7 @@ public class BTreeTest {
         assertEquals(12, b.getHeight());
 
         assertTrue(validateBTreeInserts(b, input));
+        b.close();
     }
 
     /**
@@ -237,6 +244,7 @@ public class BTreeTest {
         assertEquals(3, b.getNumberOfNodes());
 
         assertTrue(validateBTreeInserts(b, input));
+        b.close();
     }
 
     /**
@@ -253,7 +261,7 @@ public class BTreeTest {
         TreeObject t = b.search(1L);
 
         assertNull(t);
-
+        b.close();
     }
 
     /**
@@ -277,6 +285,7 @@ public class BTreeTest {
         TreeObject obj = b.search(key);
 
         assertEquals(0, t.compareTo(obj));
+        b.close();
 
     }
 
@@ -304,6 +313,7 @@ public class BTreeTest {
         TreeObject obj = b.search(1); //search for 'A'
 
         assertEquals(0, obj.compareTo(new TreeObject(1)));
+        b.close();
     }
 
     /**
@@ -324,6 +334,7 @@ public class BTreeTest {
         TreeObject obj = b.search(key);
 
         assertEquals(1, obj.getCount());
+        b.close();
     }
 
     /**
@@ -346,6 +357,7 @@ public class BTreeTest {
         TreeObject obj = b.search(duplicateKey);
 
         assertEquals(10, obj.getCount());
+        b.close();
     }
 
     /**
@@ -359,6 +371,7 @@ public class BTreeTest {
         TreeObject t = new TreeObject(key, count);
 
         assertEquals(count, t.getCount());
+        b.close();
 
     }
 
@@ -393,6 +406,7 @@ public class BTreeTest {
         assertEquals(2, obj.getCount());
 
         assertTrue(validateBTreeInserts(b, input));
+        b.close();
     }
 
 
@@ -422,6 +436,7 @@ public class BTreeTest {
         assertEquals(2, obj.getCount());
 
         assertTrue(validateBTreeInserts(b, input));
+        b.close();
     }
 
 
