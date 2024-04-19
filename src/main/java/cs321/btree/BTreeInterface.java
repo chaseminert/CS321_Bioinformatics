@@ -64,4 +64,10 @@ public interface BTreeInterface {
      */
     TreeObject search(long key) throws IOException;
 
+    /**
+     * Closes the on-disk file of the BTree
+     * @throws IOException
+     */
+    void close() throws IOException;
+
 }
